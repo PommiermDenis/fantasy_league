@@ -6,6 +6,8 @@ Created on Thu Oct 10 08:56:21 2024
 """
 
 class Player:
+    name : str
+    skill_level : int
     def __init__(self, name, skill_level = 0):
         self.name = name
         self.skill_level = skill_level
