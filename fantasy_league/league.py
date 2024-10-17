@@ -5,6 +5,8 @@ Created on Thu Oct 10 08:56:37 2024
 @author: matte
 """
 from typing import List, Dict
+from team import Team
+
 class League:
     teams : List[Team]
     scores: Dict[str, int]

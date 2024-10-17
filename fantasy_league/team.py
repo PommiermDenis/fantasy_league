@@ -5,6 +5,7 @@ Created on Thu Oct 10 08:56:07 2024
 @author: matte
 """
 from typing import List
+from player import Player
 
 class Team:
     team_name:str
