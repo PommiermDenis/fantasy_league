@@ -35,12 +35,12 @@ class League:
 
         ##on ajoute des points à la team en fonction du skill moyen 
         if(skill_1 > skill_2):
-            self.scores(team_1.team_name) += 3
+            self.scores[team_1.team_name] += 3
         elif(skill_1 < skill_2):
-            self.scores(team_2.team_name) += 3
+            self.scores[team_2.team_name] += 3
         else:
-            self.scores(team_1.team_name) += 1
-            self.scores(team_2.team_name) += 1
+            self.scores[team_1.team_name] += 1
+            self.scores[team_2.team_name] += 1
 
     def play_season(self):
         for i in range(len(self.teams)-1):
