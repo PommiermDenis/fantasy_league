@@ -13,6 +13,7 @@ class League:
 
     def __init__(self, teams = []):
         self.teams=teams
+        self.scores={}
 
         #pour chaque team, on initialise le score à 0
         for t in teams:
@@ -23,12 +24,12 @@ class League:
 
         ##on calcule le skill moyen des joueurs
         skill_1 = 0 
-        for i in range(len(team_1.players) - 1):
+        for i in range(len(team_1.players)):
             skill_1 += team_1.players[i].skill_level
         skill_1 = skill_1/len(team_1.players)
 
         skill_2 = 0 
-        for i in range(len(team_2.players) - 1):
+        for i in range(len(team_2.players)):
             skill_2 += team_2.players[i].skill_level
         skill_2 = skill_2/len(team_2.players)
 
@@ -45,10 +46,10 @@ class League:
             self.scores[team_2.team_name] += 1
 
     def play_season(self):
-        for i in range(len(self.teams)-1):
-            for j in range(i+1,len(self.teams)-1):
-                simulate_game(self.teams[i], self.teams[j])
+        for i in range(len(self.teams)):
+            for j in range(i+1,len(self.teams)):
+                self.simulate_game(self.teams[i], self.teams[j])
 
     def get_results(self):
-        for i in range(self.teams):
+        for i in self.teams:
             print(f"The team {i.team_name} has a score of {self.scores[i.team_name]}")
