@@ -27,4 +27,7 @@ class Team:
             print(f"The player {player.name} is not in the team {self.team_name}.")
     
     def __str__(self):
-        return f"The team {self.team_name} has {', '.join(self.players.player.name)}"
+        txt = f"The team {self.team_name} has"
+        for i in range(len(self.players)):
+            txt += f" {self.players[i].name}"
+        return txt
